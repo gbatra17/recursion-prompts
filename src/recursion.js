@@ -19,21 +19,36 @@ var factorial = function(n) {
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+  if(array.length === 0){
+    return 0;
+  } else {
+    return array[0] + sum(array.slice(1));
+  }
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  if(n < 0){
+    return isEven(n + 2);
+  } else if (n === 0){
+    return true;
+  } else if(n === 1){
+    return false;
+  }
+  return isEven(n - 2);
 };
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+
 };
 
 // 6. Get the integers within a range (x, y).
@@ -54,6 +69,15 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  if(n === 0){
+    return true;
+  }
+
+  if(n < 2){
+    return false;
+  }
+
+  return powerOfTwo(n/2);
 };
 
 // 9. Write a function that reverses a string.
