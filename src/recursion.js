@@ -49,18 +49,20 @@ var isEven = function(n) {
 // sumBelow(7); // 21
 var sumBelow = function(n) {
   if(n < 0){
-    return -(Math.abs(n) + 1) + sumBelow(Math.abs(n) - 1);
+    return n +1 + sumBelow(n + 1);
   }
   if(n === 0){
     return 0;
   }
-  return n + sumBelow(n-1);
+  n--;
+  return n + sumBelow(n);
 };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-
+//input is two numbers
+//output is an array of numbers exluding the ones Given
 };
 
 // 7. Compute the exponent of a number.
@@ -76,11 +78,10 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
-  if(n === 0){
+  if(n === 1){
     return true;
   }
-
-  if(n < 2){
+  if(n < 1){
     return false;
   }
 
@@ -106,6 +107,10 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
 var multiply = function(x, y) {
+  if(x === 0 || y === 0){
+    return 0;
+  }
+  return x + multiply(x, y-1);
 };
 
 // 13. Write a function that divides two numbers without using the / operator or
