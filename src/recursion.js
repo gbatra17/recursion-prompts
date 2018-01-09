@@ -114,11 +114,13 @@ var palindrome = function(string) {
   if(string.length === 1){
     return true;
   }
-  //else if it is 2 or more check if it's the same
+  //else if it is 2 or more check if it's the first and last character are the same
   if(string[0] === string[string.length - 1]){
+    //if the first and last character are the same, strings of length 2 and 3 are a palindrome
     if(string.length <= 3){
       return true;
     }
+    //for strings with greater lengths, break it down to smaller chunks to see if they are palindromes
     return palindrome(string.slice(1, string.length - 1));
   }
 };
