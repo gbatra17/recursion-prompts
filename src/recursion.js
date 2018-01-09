@@ -109,7 +109,19 @@ var reverse = function(string) {
 };
 
 // 10. Write a function that determines if a string is a palindrome.
-var palindrome = function(string) {};
+var palindrome = function(string) {
+  //if string's length is 1, the string is a palindrome
+  if(string.length === 1){
+    return true;
+  }
+  //else if it is 2 or more check if it's the same
+  if(string[0] === string[string.length - 1]){
+    if(string.length <= 3){
+      return true;
+    }
+    return palindrome(string.slice(1, string.length - 1));
+  }
+};
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
