@@ -110,6 +110,7 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  string = string.toLowerCase().split(' ').join('');
   //if string's length is 1, the string is a palindrome
   if(string.length === 1){
     return true;
@@ -122,6 +123,8 @@ var palindrome = function(string) {
     }
     //for strings with greater lengths, break it down to smaller chunks to see if they are palindromes
     return palindrome(string.slice(1, string.length - 1));
+  } else {
+    return false;
   }
 };
 
@@ -143,7 +146,9 @@ var multiply = function(x, y) {
 
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
-var divide = function(x, y) {};
+var divide = function(x, y) {
+
+};
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
