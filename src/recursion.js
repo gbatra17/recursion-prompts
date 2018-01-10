@@ -68,10 +68,10 @@ var range = function(x, y) {
   }
 
   if (x > y) {
-    return [x - 1].concat(range(x-1, y));
+    return [x - 1].concat(range(x - 1, y));
   }
 
-  return [x + 1].concat(range(x+1, y));
+  return [x + 1].concat(range(x + 1, y));
 };
 
 // 7. Compute the exponent of a number.
@@ -100,7 +100,7 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
-  if(string.length === 0){
+  if (string.length === 0) {
     return '';
   }
   //take the last letter and place it first
@@ -112,13 +112,13 @@ var reverse = function(string) {
 var palindrome = function(string) {
   string = string.toLowerCase().split(' ').join('');
   //if string's length is 1, the string is a palindrome
-  if(string.length === 1){
+  if (string.length === 1) {
     return true;
   }
   //else if it is 2 or more check if it's the first and last character are the same
-  if(string[0] === string[string.length - 1]){
+  if (string[0] === string[string.length - 1]) {
     //if the first and last character are the same, strings of length 2 and 3 are a palindrome
-    if(string.length <= 3){
+    if (string.length <= 3) {
       return true;
     }
     //for strings with greater lengths, break it down to smaller chunks to see if they are palindromes
@@ -161,11 +161,21 @@ var gcd = function(x, y) {};
 // both are identical.
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
-var compareStr = function(str1, str2) {};
+var compareStr = function(str1, str2) {
+
+};
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str) {
+  //input strings
+  //output array
+  //if string length is just 1, return the string in an array
+  if (str.length === 1) {
+    return str.split('');
+  }
+
+  return [str[0]].concat(createArray(str.slice(1)));
 
 };
 
