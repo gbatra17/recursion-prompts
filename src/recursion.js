@@ -231,7 +231,20 @@ var fizzBuzz = function(n) {
 // 20. Count the occurence of a value in a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {};
+var countOccurrence = function(array, value) {
+  //if the array is empty, the count will be 0
+  if(array.length === 0){
+    return 0;
+  }
+
+  //if the first element does not equal the value, recursively array except sliced from 1
+  if(array[0] !== value){
+    return countOccurrence(array.slice(1), value);
+  } else {
+    //if it does equal the value, add the 1 as a incrementer to count while recursing through the remaining array
+    return 1 + countOccurrence(array.slice(1), value);
+  }
+};
 
 // 21. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
