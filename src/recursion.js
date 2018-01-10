@@ -260,7 +260,13 @@ var rMap = function(array, callback) {
 // var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
-var countKeysInObj = function(obj, key) {};
+var countKeysInObj = function(obj, key) {
+  if(Object.keys(obj).length === 0){
+    return 0;
+  }
+
+
+};
 
 // 23. Write a function that counts the number of times a value occurs in an object.
 // var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
@@ -288,12 +294,20 @@ var nthFibo = function(n) {};
 
 // 27. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
-// capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(array) {};
+// capitalizeWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
+var capitalizeWords = function(array) {
+  if(array.length === 0){
+    return [];
+  }
+
+  return [array[0].toUpperCase()].concat(capitalizeWords(array.slice(1)));
+};
 
 // 28. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car','poop','banana']); // ['Car','Poop','Banana']
-var capitalizeFirst = function(array) {};
+var capitalizeFirst = function(array) {
+
+};
 
 // 29. Return the sum of all even numbers in an object containing nested objects.
 // var obj1 = {
