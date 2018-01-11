@@ -29,8 +29,15 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
-
+  if(array.length === 0){
+    return 0;
+  }
+  if(Array.isArray(array[0])){
+    return arraySum(array[0]) + arraySum(array.slice(1));
+  }
+  return array[0] + arraySum(array.slice(1));
 };
+
 
 // 4. Check if a number is even.
 var isEven = function(n) {
@@ -261,9 +268,9 @@ var rMap = function(array, callback) {
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
 var countKeysInObj = function(obj, key) {
-  if(Object.keys(obj).length === 0){
-    return 0;
-  }
+  // if(Object.keys(obj).length === 0){
+  //   return 0;
+  // }
 
 
 };
@@ -283,7 +290,17 @@ var replaceKeysInObj = function(obj, oldKey, newKey) {};
 // Example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.....
 // fibonacci(5); // [0,1,1,2,3,5]
 // Note: The 0 is not counted.
-var fibonacci = function(n) {};
+var fibonacci = function(n) {
+  if(n <= 0){
+    return null;
+  }
+
+  if(n === 1){
+    return [0, 1];
+  }
+
+  return [].concat(fibonacci(n - 2) + fibonacci(n - 1));
+};
 
 // 26. Return the Fibonacci number located at index n of the Fibonacci sequence.
 // [0,1,1,2,3,5,8,13,21]
@@ -322,22 +339,47 @@ var capitalizeFirst = function(array) {
 //   e: {e: {e: 2}, ee: 'car'}
 // };
 // nestedEvenSum(obj1); // 10
-var nestedEvenSum = function(obj) {};
+var nestedEvenSum = function(obj) {
+
+};
 
 // 30. Flatten an array containing nested arrays.
 // flatten([1,[2],[3,[[4]]],5]); // [1,2,3,4,5]
-var flatten = function(array) {};
+var flatten = function(array) {
+  if(array.length === 0){
+    return [];
+  }
+
+  if(Array.isArray(array[0])){
+    return [array[0]].concat(flatten(array.slice(1)));
+  }
+
+  return [array[0]].concat(flatten(array.slice(1)));
+
+};
 
 // 31. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {p:1, o:2, t:2, a:1}
-var letterTally = function(str, obj) {};
+var letterTally = function(str, obj) {
+  // if(str.length === 0){
+  //   return {};
+  // }
+  //
+  // if()
+};
 
 // 32. Eliminate consecutive duplicates in a list. If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
 // elements should not be changed.
 // compress([1,2,2,3,4,4,5,5,5]) // [1,2,3,4,5]
 // compress([1,2,2,3,4,4,2,5,5,5,4,4]) // [1,2,3,4,2,5,4]
-var compress = function(list) {};
+var compress = function(list) {
+  if(array.length === 0){
+    return [];
+  }
+
+  return []
+};
 
 // 33. Augument every element in a list with a new value where each element is an array
 // itself.
