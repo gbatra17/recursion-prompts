@@ -279,12 +279,26 @@ var rMap = function(array, callback) {
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
 var countKeysInObj = function(obj, key) {
-  // if(Object.keys(obj).length === 0){
-  //   return 0;
-  // }
+  var newObj = obj;
 
+  if(Object.keys(newObj).length === 0){
+    return 0;
+  }
 
-};
+  //if the value is an object
+  if(typeof newObj[Object.keys(newObj)[0]] === "object"){
+    //invoke recursive call with object key and current key
+    return countKeysInObj(Object.keys(newObj)[0], key);
+  }
+
+  delete newObj[Object.keys(newObj)[0]];
+
+  if(Object.keys(newObj)[0] === key){
+    return 1 + countKeysInObj(newObj, key);
+  }
+
+  return 0 + countKeysInObj(newObj, key)
+;};
 
 // 23. Write a function that counts the number of times a value occurs in an object.
 // var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
