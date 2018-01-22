@@ -427,7 +427,7 @@ var flatten = function(array) {
   }
 
   if(Array.isArray(array[0])){
-    return [array[0]].concat(flatten(array.slice(1)));
+    return flatten(array[0]).concat(flatten(array.slice(1)));
   }
 
   return [array[0]].concat(flatten(array.slice(1)));
