@@ -297,14 +297,37 @@ var countKeysInObj = function(obj, key) {
     return 1 + countKeysInObj(newObj, key);
   }
 
-  return 0 + countKeysInObj(newObj, key)
-;};
+  return 0 + countKeysInObj(newObj, key);
+};
 
 // 23. Write a function that counts the number of times a value occurs in an object.
 // var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
 // countValuesInObj(obj, 'r') // 2
 // countValuesInObj(obj, 'e') // 1
-var countValuesInObj = function(obj, value) {};
+
+var countValuesInObj = function(obj, value) {
+  //does not work yet
+  // var newObj = obj;
+  //
+  // if (Object.keys(newObj).length === 0) {
+  //   return 0;
+  // }
+  //
+  // //if the value is an object
+  // if (typeof newObj[Object.keys(newObj)[0]] === "object") {
+  //   //invoke recursive call with object key and current key
+  //   return countValuesInObj(newObj[Object.keys(newObj)[0]], value);
+  // }
+  //
+  // delete newObj[Object.keys(newObj)[0]];
+  //
+  // if (newObj[Object.keys(newObj)[0]] === value) {
+  //   return 1 + countValuesInObj(newObj[Object.keys(newObj)[0]], value);
+  // }
+  //
+  // return 0 + countValuesInObj(newObj[Object.keys(newObj)[0]], value);
+};
+
 
 // 24. Find all keys in an object (and nested objects) by a provided name and rename
 // them to a provided new name while preserving the value stored at that key.
@@ -324,15 +347,29 @@ var fibonacci = function(n) {
     return [0, 1];
   }
 
-  return [].concat(fibonacci(n - 2) + fibonacci(n - 1));
+  return [0].concat(fibonacci(n - 2) + fibonacci(n - 1));
 };
 
 // 26. Return the Fibonacci number located at index n of the Fibonacci sequence.
-// [0,1,1,2,3,5,8,13,21]
+// [1,1,2,3,5,8,13,21]
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {};
+var nthFibo = function(n) {
+  if(n < 0){
+    return null;
+  }
+
+  if(n === 0){
+    return 0;
+  }
+
+  if(n === 1){
+    return 1;
+  }
+
+  return nthFibo(n-2) + nthFibo(n-1);
+};
 
 // 27. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
