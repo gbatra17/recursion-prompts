@@ -457,11 +457,16 @@ var letterTally = function(str, obj = {}) {
 // compress([1,2,2,3,4,4,5,5,5]) // [1,2,3,4,5]
 // compress([1,2,2,3,4,4,2,5,5,5,4,4]) // [1,2,3,4,2,5,4]
 var compress = function(list) {
-  if(array.length === 0){
+  //need to finish still
+  if(list.length === 0){
     return [];
   }
 
-  return []
+  if(list[0] === list[1]){
+    list.splice(0, 1);
+  }
+
+  return [list[0]].concat(compress(list.slice(1)));
 };
 
 // 33. Augument every element in a list with a new value where each element is an array
@@ -472,7 +477,18 @@ var augmentElements = function(array, aug) {};
 // 34. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {};
+var minimizeZeroes = function(array) {
+  if(array.length === 0){
+    return [];
+  }
+
+  if(minimizeZeroes(array.slice(1))[0] === 0 && array[0] === 0){
+    return minimizeZeroes(array.slice(1));
+  }
+
+  return [array[0]].concat(minimizeZeroes(array.slice(1)));
+
+};
 
 // 35. Alternate the numbers in an array between positive and negative regardless of
 // their original sign. The first number in the index always needs to be positive.
