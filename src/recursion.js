@@ -519,7 +519,29 @@ var alternateSign = function(array) {
 // 36. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {};
+var numToText = function(str) {
+  if(str.length === 0){
+    return [];
+  }
+
+  var wordToDigit = {
+    "1": "one",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+    "5": "five",
+    "6": "six",
+    "7": "seven",
+    "8": "eight",
+    "9": "nine"
+  }
+
+  if(wordToDigit.hasOwnProperty(str[0])){
+    return numToText(str.replace(str[0], wordToDigit[str[0]]));
+  }
+
+  return str[0].concat(numToText(str.slice(1)));
+};
 
 
 // *** EXTRA CREDIT ***
