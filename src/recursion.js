@@ -151,7 +151,9 @@ var palindrome = function(string) {
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-var modulo = function(x, y) {};
+var modulo = function(x, y) {
+
+};
 
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
@@ -165,7 +167,14 @@ var multiply = function(x, y) {
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
 var divide = function(x, y) {
+ if(x === 0 ){
+   return 0;
+ }
+ if( x === 0 && y === 0){
+   return NaN;
+ }
 
+ return x - divide(x, y - 1);
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
@@ -331,7 +340,10 @@ var countValuesInObj = function(obj, value) {
 
 // 24. Find all keys in an object (and nested objects) by a provided name and rename
 // them to a provided new name while preserving the value stored at that key.
-var replaceKeysInObj = function(obj, oldKey, newKey) {};
+var replaceKeysInObj = function(obj, oldKey, newKey) {
+  //{e:{x:'y'},t:{r:{e:'r'},p:{y:'r'}},y:'e'}
+
+};
 
 // 25. Get the first n Fibonacci numbers. In the Fibonacci sequence, each subsequent
 // number is the sum of the previous two.
