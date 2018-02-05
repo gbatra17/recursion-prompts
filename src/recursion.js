@@ -70,7 +70,7 @@ var sumBelow = function(n) {
 var range = function(x, y) {
   //input is two numbers
   //output is an array of numbers exluding the ones Given
-  if (x === y) {
+  if (x === y || (x + 1 === y)) {
     return [];
   }
 
